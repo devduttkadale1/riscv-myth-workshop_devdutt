@@ -12,6 +12,6 @@ This repository contains:
 
 - docs/ → architecture explanations
 - notes/ → daily notes
-- labs/ → workshop experiments
+- labs/ → workshop experiments and codes
 - diagrams/ → datapath and pipeline diagrams
 - images/ → screenshots and waveforms
