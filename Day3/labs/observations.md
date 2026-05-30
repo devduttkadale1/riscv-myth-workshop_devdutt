@@ -4,7 +4,7 @@
 
 2. @1, @2, @3 represent pipeline stages.
 
-3. >>1 means value from previous cycle.
+3. (>>1) means value from previous cycle.
 
 4. ?$valid executes logic only when valid is high.
 
