@@ -18,6 +18,55 @@ The day introduced key RTL design concepts such as:
 
 ---
 
+## Workshop Progress
+
+| Day   | Topic                                                 | Status      |
+| ----- | ----------------------------------------------------- | ----------- |
+| Day 1 | Introduction to RISC-V ISA and GNU Compiler Toolchain | ⏳ Pending   |
+| Day 2 | Introduction to ABI and Basic Verification Flow       | ⏳ Pending   |
+| Day 3 | Digital Logic with TL-Verilog and Makerchip           | ✅ Completed |
+| Day 4 | Basic RISC-V CPU Microarchitecture                    | 🚧 Upcoming |
+| Day 5 | Complete Pipelined RISC-V CPU Microarchitecture       | 🚧 Upcoming |
+
+---
+
+## Repository Structure
+
+```text
+riscv-myth-workshop_devdutt/
+│
+├── Day1/
+├── Day2/
+├── Day3/
+│   ├── README.md
+│   ├── notes.md
+│   ├── observations.md
+│   ├── code/
+│   └── screenshots/
+│
+├── Day4/
+├── Day5/
+│
+└── README.md
+```
+
+---
+
+## Learning Objectives
+
+This repository documents my journey through the RISC-V based MYTH Workshop, covering:
+
+* RISC-V ISA Fundamentals
+* GNU Toolchain
+* ABI Concepts
+* Verification Flow
+* TL-Verilog and Makerchip
+* CPU Microarchitecture
+* Pipelined RISC-V CPU Design
+
+The goal is to build a strong foundation in RTL Design, Computer Architecture, and RISC-V Processor Design through hands-on labs, notes, screenshots, and implementation exercises.
+
+
 ## Topics Covered
 
 ### 1. Logic Gates
@@ -150,6 +199,67 @@ to create replicated coordinate structures.
 * Pythagoras Pipeline
 
 ---
+
+## Screenshots
+
+### Introduction
+
+![Introduction](screenshots/Day3_Lab_Intro.png)
+
+### Inverter Gate
+
+![Inverter Gate](screenshots/Day3_Lab2_inverter.png)
+
+### Logic Gates
+
+![Logic Gates](screenshots/Day3_Lab2_logic_gates.png)
+
+### Vectors
+
+![Vectors](screenshots/Day3_Lab3_vectors.png)
+
+### Multiplexer
+
+![MUX](screenshots/Day3_Lab4_MUX.png)
+
+![MUX Waveform](screenshots/Day3_Lab4_MUX_V.png)
+
+### Calculator
+
+![Calculator](screenshots/Day3_Lab5_calculator.png)
+
+### Fibonacci Series
+
+![Fibonacci Series](screenshots/Day3_Lab_fibonacci_series.png)
+
+### Sequential Calculator
+
+![Sequential Calculator](screenshots/Day3_Lab7_sequential_calculator.png)
+
+### Error Propagation
+
+![Error Propagation](screenshots/Day3_Lab8_error.png)
+
+### Pipeline Counter Calculator
+
+![Pipeline Counter Calculator](screenshots/Day3_Lab9_pipeline_counter_calculator.png)
+
+### Valid Signal
+
+![Valid Signal](screenshots/Day3_Lab10_valid.png)
+
+### Calculator With Validity
+
+![Calculator With Validity](screenshots/Day3_Lab11cycle_calculator_with_validity.png)
+
+### Single Value Memory Calculator
+
+![Single Value Memory Calculator](screenshots/Day3_Lab12_calculator_with_single_value_memory.png)
+
+### 3D Distance Calculator
+
+![3D Distance Calculator](screenshots/Day3_Lab13_3D_distance_calculator.png)
+
 
 ## Key Learnings
 
