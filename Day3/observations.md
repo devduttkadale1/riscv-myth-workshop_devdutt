@@ -1,21 +1,185 @@
-# Day 3 Observations
+# Day 3 Observations and Debugging Notes
 
-1. TL-Verilog is stage-oriented instead of always block oriented.
+## Important Concepts Learned
 
-2. @1, @2, @3 represent pipeline stages.
+### Pipeline Stages
 
-3. (>>1) means value from previous cycle.
+TL-Verilog uses pipeline stages:
 
-4. ?$valid executes logic only when valid is high.
+```tlv
+@1
+@2
+@3
+```
 
-5. Pipeline alignment is critical.
+to represent timing boundaries.
 
-6. Wrong indentation causes SandPiper parser errors.
+Unlike traditional Verilog, explicit registers are not required.
 
-7. Combinational calculator computes every cycle.
+---
 
-8. Sequential calculator uses previous output as input.
+### Signal Alignment
 
-9. Two-cycle calculator trades latency for timing closure.
+Alignment operators are used when a signal generated in one stage is used in another stage.
 
-10. Validity prevents invalid pipeline data from propagating.
+Example:
+
+```tlv
+>>1$a_sq
+```
+
+Meaning:
+
+Bring the value of `$a_sq` from one previous stage.
+
+General rule:
+
+```text
+Alignment = Current Stage - Source Stage
+```
+
+---
+
+### Sequential Logic
+
+Feedback creates state.
+
+Example:
+
+```tlv
+$val1 = >>1$out
+```
+
+The previous output becomes the next input.
+
+---
+
+### Validity Logic
+
+Conditional execution:
+
+```tlv
+?$valid
+```
+
+allows logic to execute only when valid data is present.
+
+---
+
+### Memory
+
+A memory element can be created using feedback.
+
+Example:
+
+```tlv
+$mem = condition ? new_value : >>1$mem
+```
+
+---
+
+## Debugging Issues Encountered
+
+### 1. Unassigned Signal Errors
+
+Example:
+
+```tlv
+$out = !$in1;
+```
+
+without assigning `$in1`.
+
+Error:
+
+```text
+Signal is used but never assigned.
+```
+
+Fix:
+
+Assign the signal before use.
+
+---
+
+### 2. Indentation Errors
+
+TL-Verilog is indentation sensitive.
+
+Incorrect:
+
+```tlv
+|calc
+@1
+```
+
+Correct:
+
+```tlv
+|calc
+   @1
+```
+
+Hierarchy is determined by indentation.
+
+---
+
+### 3. Pipeline Misalignment
+
+Incorrect:
+
+```tlv
+>>2$a_sq
+```
+
+when signal is only one stage away.
+
+Result:
+
+* Wrong data alignment
+* Incorrect results
+
+---
+
+### 4. sqrt() Compatibility Issue
+
+Some tutorial examples use:
+
+```tlv
+sqrt($cc_sq)
+```
+
+Current Makerchip/Verilator environment may not support this function directly.
+
+Purpose of example:
+
+* Demonstrate pipeline timing
+* Demonstrate hierarchy replication
+
+Not square-root hardware implementation.
+
+---
+
+### 5. Parser Errors
+
+Long multi-line assignments sometimes caused parser failures.
+
+Fix:
+
+Keep assignments properly aligned and formatted.
+
+---
+
+## Most Important Day 3 Takeaway
+
+Day 3 was not about syntax.
+
+The primary learning was understanding:
+
+* Timing
+* Pipelines
+* Feedback
+* Validity
+* State
+
+These concepts form the foundation for Day 4 (CPU Microarchitecture) and Day 5 (Pipelined RISC-V CPU).
