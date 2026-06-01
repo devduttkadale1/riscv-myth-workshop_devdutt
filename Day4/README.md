@@ -291,65 +291,237 @@ Simulation completed successfully.
 
 ### Introduction
 
-![Introduction](screenshots/Day4_Lab1_intro.png)
+## Screenshots
 
-### Program Counter
+### RISC-V CPU Microarchitecture Introduction
 
-![Program Counter](screenshots/Day4_Lab2_PC.png)
+![RISC-V Introduction](screenshots/risc_v_intro.png)
 
-![Program Counter Waveform](screenshots/Day4_Lab2_PC_waveform.png)
+![RISC-V Visualization](screenshots/risc_v_viz.png)
 
-### Instruction Fetch
+---
 
-![Instruction Fetch](screenshots/Day4_Lab3_fetch.png)
+### Lab 1 - Program Counter Reset
 
-![Instruction Fetch Waveform](screenshots/Day4_Lab3_fetch_waveform.png)
+![PC Reset](screenshots/Lab_1_PC_reset.png)
 
-### Instruction Type Decode
+---
 
-![Instruction Decode](screenshots/Day4_Lab4_decode_type.png)
+### Lab 2 - Instruction Fetch
 
-### Immediate Decode
+#### Initial Fetch Implementation
 
-![Immediate Decode](screenshots/Day4_Lab5_immediate_decode.png)
+![Instruction Fetch Error](screenshots/Lab_2_fetch_error.png)
 
-### Register Field Decode
+#### Correct Instruction Fetch
 
-![Register Field Decode](screenshots/Day4_Lab6_register_fields.png)
+![Instruction Fetch Success](screenshots/Lab_2_fetch_with_instr.png)
 
-### Complete Instruction Decode
+---
 
-![Complete Decode](screenshots/Day4_Lab7_complete_decode.png)
+### Lab 3 - Instruction Type Decode
 
-### Register File Read
+![Instruction Type Decode](screenshots/Lab_3_decode_instr_type.png)
 
-![Register File Read](screenshots/Day4_Lab8_regfile_read.png)
+Implemented detection of:
 
-![Register File Read Waveform](screenshots/Day4_Lab9_regfile_read_waveform.png)
+* R-Type
+* I-Type
+* S-Type
+* B-Type
+* U-Type
+* J-Type
 
-### ALU
+---
 
-![ALU](screenshots/Day4_Lab10_ALU.png)
+### Lab 4 - Immediate Decode (I-Type)
 
-### Register File Write
+![Immediate Decode](screenshots/Lab_4_decode_instr_i_type.png)
 
-![Register File Write](screenshots/Day4_Lab11_regfile_write.png)
+Implemented sign-extension and immediate extraction for I-Type instructions.
 
-### Branch Logic
+---
 
-![Branch Logic](screenshots/Day4_Lab12_branch_logic.png)
+### Lab 5 - Instruction Format Decode
 
-### Branch Target PC
+#### Part A
 
-![Branch Target PC](screenshots/Day4_Lab13_branch_target.png)
+![Instruction Format Decode A](screenshots/Lab_5a_decode_instr_format.png)
 
-### Testbench
+#### Part B
 
-![Testbench](screenshots/Day4_Lab14_testbench.png)
+![Instruction Format Decode B](screenshots/Lab_5b_decode_instr_format.png)
 
-### Simulation Passed
+Decoded:
 
-![Simulation Passed](screenshots/Day4_Lab15_pass.png)
+* opcode
+* rd
+* rs1
+* rs2
+* funct3
+* funct7
+
+---
+
+### Lab 6 - Valid rs2 Condition
+
+#### Part A
+
+![Valid rs2 Condition A](screenshots/Lab_6a_decode_instr_valid_rs2_condition.png)
+
+#### Part B
+
+![Valid rs2 Condition B](screenshots/Lab_6b_decode_instr_valid_rs2_condition.png)
+
+Implemented:
+
+```text
+rs2_valid
+```
+
+to determine whether an instruction requires a second source register.
+
+---
+
+### Lab 7 - Complete Instruction Decode
+
+#### Part A
+
+![Complete Decode A](screenshots/Lab_7a_decode_instr_complete_cycle.png)
+
+#### Part B
+
+![Complete Decode B](screenshots/Lab_7b_decode_instr_complete_cycle.png)
+
+Implemented individual instruction decoding:
+
+* ADD
+* ADDI
+* BEQ
+* BNE
+* BLT
+* BGE
+* BLTU
+* BGEU
+
+---
+
+### Lab 8 - Register File Read
+
+#### Part 1A
+
+![Register File Read 1A](screenshots/Lab_8_Part1a_register_file_read.png)
+
+#### Part 1B
+
+![Register File Read 1B](screenshots/Lab_8_Part1b_register_file_read.png)
+
+#### Part 2A
+
+![Register File Read 2A](screenshots/Lab_8_Part2a_register_file_read.png)
+
+#### Part 2B
+
+![Register File Read 2B](screenshots/Lab_8_Part2b_register_file_read.png)
+
+Implemented:
+
+* Read Port 1
+* Read Port 2
+* Source Operand Extraction
+
+---
+
+### Lab 9 - ALU Implementation
+
+#### Part A
+
+![ALU Part A](screenshots/Lab_9a_ALU.png)
+
+#### Part B
+
+![ALU Part B](screenshots/Lab_9b_ALU.png)
+
+Implemented:
+
+* ADD
+* ADDI
+
+---
+
+### Lab 10 - Register File Write
+
+#### Part A
+
+![Register File Write A](screenshots/Lab_10a_register_file_write.png)
+
+#### Part B
+
+![Register File Write B](screenshots/Lab_10b_register_file_write.png)
+
+Implemented:
+
+* Write Enable
+* Write Address
+* Write Data
+
+Protected writes to:
+
+```text
+x0
+```
+
+---
+
+### Lab 11 - Branch Logic
+
+#### Part A
+
+![Branch Logic A](screenshots/Lab_11a_register_file_branch.png)
+
+#### Part B
+
+![Branch Logic B](screenshots/Lab_11b_register_file_branch.png)
+
+Implemented branch comparison logic.
+
+---
+
+### Lab 12 - Branch Target and PC Redirection
+
+#### Part A
+
+![Branch Target A](screenshots/Lab_12a_register_file_branch.png)
+
+#### Part B
+
+![Branch Target B](screenshots/Lab_12b_register_file_branch.png)
+
+Implemented:
+
+* Branch Target Address Generation
+* Program Counter Redirection
+
+---
+
+### Lab 13 - CPU Testbench
+
+#### Part A
+
+![Testbench A](screenshots/Lab_13a_register_file_testbench.png)
+
+#### Part B
+
+![Testbench B](screenshots/Lab_13b_register_file_testbench.png)
+
+Verified correct execution of the summation program.
+
+Simulation Status:
+
+```text
+PASSED
+```
+
 
 ---
 
