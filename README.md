@@ -203,9 +203,8 @@ This repository serves as both a learning journal and a processor design project
 ## Author
 
 **Devdutt Kadale**
-
-Electronics and Instrumentation Engineering
-National Institute of Technology (NIT) Agartala
+Broad Semiconductor
+National Institute of Technology (NIT) Calicut
 
 Interested in:
 
