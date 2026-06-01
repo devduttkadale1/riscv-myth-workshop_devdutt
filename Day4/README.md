@@ -1,135 +1,178 @@
-# Day 4 - Building a Single-Cycle RV32I Processor
+# Day 4 - Basic RISC-V CPU Microarchitecture
 
 ## Overview
 
-Day 4 focused on implementing the core microarchitecture of a RISC-V RV32I processor using TL-Verilog and Makerchip.
+Day 4 focused on building a functional Single-Cycle RISC-V RV32I Processor using TL-Verilog and Makerchip.
 
-The objective was to transform the digital design concepts learned in Day 3 into a functioning processor capable of fetching, decoding, executing, and writing back instructions.
+The objective was to move from generic digital design concepts learned in Day 3 to actual CPU implementation by constructing the major datapath and control blocks of a processor.
 
-By the end of Day 4, a complete single-cycle RV32I processor was capable of executing arithmetic instructions and control-flow instructions while successfully running a summation program.
+The day introduced key CPU design concepts such as:
+
+* Program Counter (PC)
+* Instruction Fetch
+* Instruction Decode
+* Immediate Generation
+* Register File Read
+* ALU Operations
+* Register File Write
+* Branch Logic
+* Program Counter Redirection
+* CPU Verification
+
+---
+
+## Final Result
+
+Successfully implemented a Single-Cycle RV32I Processor capable of:
+
+* Instruction Fetch
+* Instruction Decode
+* Register File Read
+* ALU Execution
+* Register File Write
+* Branch Execution
+
+Final verification program computes:
+
+```text
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45
+```
+
+Stored in:
+
+```text
+x10 (a0)
+```
+
+Simulation Status:
+
+```text
+✅ PASSED
+```
 
 ---
 
 ## Workshop Progress
 
-| Day   | Topic                                        | Status      |
-| ----- | -------------------------------------------- | ----------- |
-| Day 1 | Introduction to RISC-V ISA and GNU Toolchain | ⏳ Pending   |
-| Day 2 | ABI and Verification Flow                    | ⏳ Pending   |
-| Day 3 | Digital Logic with TL-Verilog and Makerchip  | ✅ Completed |
-| Day 4 | Basic RISC-V CPU Microarchitecture           | ✅ Completed |
-| Day 5 | Pipelined RISC-V CPU Microarchitecture       | 🚧 Upcoming |
+| Day   | Topic                                                 | Status      |
+| ----- | ----------------------------------------------------- | ----------- |
+| Day 1 | Introduction to RISC-V ISA and GNU Compiler Toolchain | ⏳ Pending   |
+| Day 2 | Introduction to ABI and Basic Verification Flow       | ⏳ Pending   |
+| Day 3 | Digital Logic with TL-Verilog and Makerchip           | ✅ Completed |
+| Day 4 | Basic RISC-V CPU Microarchitecture                    | ✅ Completed |
+| Day 5 | Complete Pipelined RISC-V CPU Microarchitecture       | 🚧 Upcoming |
 
 ---
 
-## CPU Datapath Implemented
-
-The processor datapath built during Day 4 consists of:
+## Repository Structure
 
 ```text
-Program Counter
-      │
-      ▼
-Instruction Memory
-      │
-      ▼
-Instruction Decode
-      │
-      ▼
-Register File Read
-      │
-      ▼
-ALU Execute
-      │
-      ▼
-Register File Write
-```
-
-Additional control logic:
-
-```text
-Branch Comparator
-      │
-      ▼
-Branch Target Generation
-      │
-      ▼
-Program Counter Redirection
+riscv-myth-workshop_devdutt/
+│
+├── Day1/
+├── Day2/
+├── Day3/
+│
+├── Day4/
+│   ├── README.md
+│   ├── notes.md
+│   ├── observations.md
+│   ├── code/
+│   └── screenshots/
+│
+├── Day5/
+│
+└── README.md
 ```
 
 ---
 
-## Features Implemented
+## Learning Objectives
 
-### Instruction Fetch
+This day focused on understanding how a processor executes instructions by implementing the complete datapath and control flow of a simple RV32I CPU.
 
-Implemented:
+Topics covered include:
 
-* Program Counter (PC)
-* PC Reset Logic
-* PC Increment Logic
-* Instruction Memory Interface
+* CPU Microarchitecture
+* Instruction Fetch
+* Instruction Decode
+* Immediate Generation
+* Register File Architecture
+* ALU Design
+* Branch Control Logic
+* Program Counter Control
+* CPU Verification
 
-Instruction fetch performed using:
-
-```tlv
-$imem_rd_addr = $pc[M4_IMEM_INDEX_CNT+1:2];
-```
-
----
-
-### Instruction Decode
-
-Decoded instruction fields:
-
-```text
-opcode
-rd
-rs1
-rs2
-funct3
-funct7
-```
-
-Implemented instruction recognition for:
-
-#### Arithmetic Instructions
-
-* ADD
-* ADDI
-
-#### Branch Instructions
-
-* BEQ
-* BNE
-* BLT
-* BGE
-* BLTU
-* BGEU
+The goal was to understand how instructions move through a processor from fetch to execution.
 
 ---
 
-### Immediate Generation
+## Topics Covered
 
-Implemented immediate extraction and sign extension for I-type instructions.
+### 1. Program Counter (PC)
+
+Implemented Program Counter logic.
+
+Responsibilities:
+
+* Reset Handling
+* PC Increment
+* Branch Redirection
 
 Example:
 
 ```tlv
-$imm[31:0] =
-   {{21{$instr[31]}}, $instr[30:20]};
+$pc = >>1$pc + 32'd4;
 ```
 
 ---
 
-### Register File Read
+### 2. Instruction Fetch
+
+Fetched instructions from Instruction Memory.
+
+Implemented:
+
+* Instruction Memory Enable
+* Instruction Memory Address Generation
+* Instruction Fetch Logic
+
+---
+
+### 3. Instruction Decode
+
+Decoded instruction fields:
+
+* opcode
+* rd
+* rs1
+* rs2
+* funct3
+* funct7
+
+Used these fields to identify instructions.
+
+---
+
+### 4. Immediate Generation
+
+Implemented immediate extraction and sign extension.
+
+Instruction types decoded:
+
+* I-Type
+* B-Type
+
+---
+
+### 5. Register File Read
 
 Implemented:
 
 * Read Port 1
 * Read Port 2
 
-Generated:
+Generated source operands:
 
 ```text
 src1_value
@@ -140,9 +183,9 @@ for ALU execution.
 
 ---
 
-### Arithmetic Logic Unit (ALU)
+### 6. Arithmetic Logic Unit (ALU)
 
-Implemented:
+Implemented arithmetic instructions:
 
 #### ADD
 
@@ -156,29 +199,29 @@ result = src1 + src2
 result = src1 + imm
 ```
 
-The ALU generates the final computation result used for writeback.
-
 ---
 
-### Register File Write
+### 7. Register File Write
 
-Implemented:
+Implemented writeback stage.
+
+Signals:
 
 * Write Enable
 * Write Address
 * Write Data
 
-Special handling added for:
+Protected:
 
 ```text
 x0 register
 ```
 
-Writes to x0 are ignored as required by the RISC-V specification.
+from accidental writes.
 
 ---
 
-### Branch Logic
+### 8. Branch Logic
 
 Implemented:
 
@@ -195,224 +238,164 @@ Generated:
 taken_br
 ```
 
-which determines whether branch redirection occurs.
+signal.
 
 ---
 
-### Branch Target Generation
+### 9. Branch Target Generation
 
-Branch target address calculated as:
+Implemented:
 
 ```text
 PC + Immediate
 ```
 
-Generated signal:
-
-```text
-br_tgt_pc
-```
-
-Used to redirect execution flow when branch conditions are satisfied.
+to generate branch target addresses.
 
 ---
 
-### Program Counter Redirection
+### 10. CPU Verification
 
-Implemented logic to select:
-
-```text
-PC + 4
-```
-
-for normal execution
-
-or
-
-```text
-Branch Target PC
-```
-
-for taken branches.
-
-This enables loop execution and control-flow changes.
-
----
-
-## Test Program
-
-The implemented processor executes the following summation program:
-
-```text
-sum = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9
-```
-
-Registers used:
-
-```text
-x10 (a0) : Final Result
-x12 (a2) : Loop Limit
-x13 (a3) : Counter
-x14 (a4) : Accumulator
-```
-
-Expected result:
-
-```text
-45
-```
-
----
-
-## Verification
-
-A testbench was implemented to verify processor correctness.
+Implemented a testbench to verify processor functionality.
 
 Pass condition:
 
-```tlv
-|cpu/xreg[10]>>5$value == 45
-```
-
-Simulation Result:
-
 ```text
-Simulation PASSED!!!
+x10 = 45
 ```
 
-This confirms correct operation of:
-
-* Fetch
-* Decode
-* Register Read
-* ALU
-* Register Write
-* Branch Logic
-* PC Redirection
+Simulation completed successfully.
 
 ---
 
 ## Labs Completed
 
-### Instruction Decode
-
-Implemented:
-
-* Opcode Extraction
-* Register Extraction
-* Instruction Identification
+* Introduction to RISC-V CPU Microarchitecture
+* Program Counter (PC) Implementation
+* Instruction Fetch Logic
+* Instruction Type Decode
+* Immediate Decode
+* Register Field Decode
+* Complete Instruction Decode
+* Register File Read - Part 1
+* Register File Read - Part 2
+* ALU Implementation (ADD / ADDI)
+* Register File Write
+* Branch Logic - Part 1
+* Branch Logic - Part 2
+* CPU Testbench
 
 ---
+
+## Screenshots
+
+### Introduction
+
+![Introduction](screenshots/Day4_Lab1_intro.png)
+
+### Program Counter
+
+![Program Counter](screenshots/Day4_Lab2_PC.png)
+
+![Program Counter Waveform](screenshots/Day4_Lab2_PC_waveform.png)
+
+### Instruction Fetch
+
+![Instruction Fetch](screenshots/Day4_Lab3_fetch.png)
+
+![Instruction Fetch Waveform](screenshots/Day4_Lab3_fetch_waveform.png)
+
+### Instruction Type Decode
+
+![Instruction Decode](screenshots/Day4_Lab4_decode_type.png)
+
+### Immediate Decode
+
+![Immediate Decode](screenshots/Day4_Lab5_immediate_decode.png)
+
+### Register Field Decode
+
+![Register Field Decode](screenshots/Day4_Lab6_register_fields.png)
+
+### Complete Instruction Decode
+
+![Complete Decode](screenshots/Day4_Lab7_complete_decode.png)
 
 ### Register File Read
 
-Implemented:
+![Register File Read](screenshots/Day4_Lab8_regfile_read.png)
 
-* rs1 Read Path
-* rs2 Read Path
-
----
+![Register File Read Waveform](screenshots/Day4_Lab9_regfile_read_waveform.png)
 
 ### ALU
 
-Implemented:
-
-* ADD
-* ADDI
-
----
+![ALU](screenshots/Day4_Lab10_ALU.png)
 
 ### Register File Write
 
-Implemented:
-
-* Destination Register Writeback
-* x0 Protection
-
----
+![Register File Write](screenshots/Day4_Lab11_regfile_write.png)
 
 ### Branch Logic
 
-Implemented:
+![Branch Logic](screenshots/Day4_Lab12_branch_logic.png)
 
-* Branch Comparators
-* Branch Decision Logic
+### Branch Target PC
 
----
-
-### Branch Target Generation
-
-Implemented:
-
-* PC + Immediate Computation
-* Branch Redirection
-
----
+![Branch Target PC](screenshots/Day4_Lab13_branch_target.png)
 
 ### Testbench
 
-Implemented:
+![Testbench](screenshots/Day4_Lab14_testbench.png)
 
-* Functional Verification
-* Automatic Pass Detection
+### Simulation Passed
 
----
-
-## Repository Structure
-
-```text
-Day4/
-│
-├── README.md
-├── notes.md
-├── observations.md
-│
-├── code/
-│   ├── riscv_intro.tlv
-│   ├── riscv_pc_reset.tlv
-│   ├── riscv_fetch_instr.tlv
-│   ├── riscv_decode_instr_type.tlv
-│   ├── riscv_decode_i_instr_type.tlv
-│   ├── riscv_decode_instr_format_R_type.tlv
-│   ├── riscv_decode_instr_valid_rs2_condition.tlv
-│   ├── riscv_decode_instr_complete_cycle.tlv
-│   ├── riscv_register_file_read1.tlv
-│   ├── riscv_register_file_read2.tlv
-│   ├── riscv_ALU.tlv
-│   ├── riscv_register_file_write.tlv
-│   ├── riscv_register_file_branch1.tlv
-│   ├── riscv_register_file_branch2.tlv
-│   └── riscv_testbench.tlv
-│
-└── screenshots/
-```
+![Simulation Passed](screenshots/Day4_Lab15_pass.png)
 
 ---
 
 ## Key Learnings
 
-* How instructions are fetched from memory.
-* How instruction decoding generates processor control signals.
-* How register files support simultaneous reads and writes.
-* How ALUs perform arithmetic operations.
-* How branch instructions modify control flow.
-* How program counters are redirected during branch execution.
-* How a complete processor is verified using simulation.
+* Understood the architecture of a simple RV32I processor.
+* Learned how instructions are fetched from memory.
+* Implemented instruction decoding and control signal generation.
+* Learned how register files provide operands to the ALU.
+* Implemented arithmetic execution using ADD and ADDI.
+* Implemented register writeback logic.
+* Learned branch comparison and PC redirection.
+* Built and verified a complete single-cycle CPU.
 
 ---
 
-## Day 4 Summary
+## Files
 
-Day 4 marked the transition from generic digital design concepts to actual processor implementation.
+### Code
 
-A functional RV32I processor was built capable of:
+Located in:
 
-* Fetching Instructions
-* Decoding Instructions
-* Reading Registers
-* Executing Arithmetic Operations
-* Writing Results Back
-* Executing Branches
-* Running Complete Programs
+```text
+Day4/code/
+```
 
-This forms the foundation for Day 5, where the processor will be transformed into a pipelined RISC-V CPU.
+### Screenshots
+
+Located in:
+
+```text
+Day4/screenshots/
+```
+
+### Notes
+
+Located in:
+
+```text
+Day4/notes.md
+```
+
+### Observations
+
+Located in:
+
+```text
+Day4/observations.md
+```
