@@ -157,78 +157,244 @@ Main Files:
 
 ## Screenshots
 
-Located in:
+### Lab 1 - Pipeline Start and Valid Logic
 
-```text
-Day5/screenshots/
-```
+#### Part A
 
-### Lab 1
+![Start Valid A](screenshots/Lab1a_start_valid.png)
 
-* Lab1a_start_valid.png
-* Lab1b_start_valid.png
+#### Part B
 
-### Lab 2
+![Start Valid B](screenshots/Lab1b_start_valid.png)
 
-* Lab2a_cycle1.png
-* Lab2b_cycle1.png
+Implemented:
 
-### Lab 3
-
-* Lab3a_cycle2.png
-* Lab3b_cycle2.png
-
-### Lab 4
-
-* Lab4a_register_file_bypass.png
-* Lab4b_register_file_bypass.png
-
-### Lab 5
-
-* Lab5a_branch.png
-* Lab5b_branch.png
-
-### Lab 6
-
-* Lab6a_complete_instr_decode.png
-* Lab6b_complete_instr_decode.png
-
-### Lab 7
-
-* Lab7a_complete_alu.png
-* Lab7b_complete_alu.png
-
-### Lab 8
-
-* Lab8a_redirect_loads.png
-* Lab8b_redirect_loads.png
-* Lab8c_redirect_loads.png
-
-### Lab 9
-
-* Lab9a_load_data.png
-* Lab9b_load_data.png
-* Lab9c_load_data.png
-
-### Lab 10
-
-* Lab10a_load_data2.png
-* Lab10b_load_data2.png
-* Lab10c_load_data2.png
-
-### Lab 11
-
-* Lab11a_load_store_program.png
-* Lab11b_load_store_program.png
-* Lab11c_load_store_program.png
-
-### Lab 12
-
-* Lab12a_jump_instr.png
-* Lab12b_jump_instr.png
-* Lab12c_jump_instr.png
+* Pipeline Start Signal
+* Valid Instruction Tracking
 
 ---
+
+### Lab 2 - Pipeline Timing (Cycle 1)
+
+#### Part A
+
+![Cycle 1A](screenshots/Lab2a_cycle1.png)
+
+#### Part B
+
+![Cycle 1B](screenshots/Lab2b_cycle1.png)
+
+Implemented:
+
+* First Pipeline Delay
+* Instruction Propagation
+
+---
+
+### Lab 3 - Pipeline Timing (Cycle 2)
+
+#### Part A
+
+![Cycle 2A](screenshots/Lab3a_cycle2.png)
+
+#### Part B
+
+![Cycle 2B](screenshots/Lab3b_cycle2.png)
+
+Implemented:
+
+* Additional Pipeline Stage
+* Multi-cycle Execution
+
+---
+
+### Lab 4 - Register File Bypass
+
+#### Part A
+
+![Register File Bypass A](screenshots/Lab4a_register_file_bypass.png)
+
+#### Part B
+
+![Register File Bypass B](screenshots/Lab4b_register_file_bypass.png)
+
+Implemented:
+
+* Register Forwarding
+* Data Hazard Resolution
+
+---
+
+### Lab 5 - Branch Logic
+
+#### Part A
+
+![Branch A](screenshots/Lab5a_branch.png)
+
+#### Part B
+
+![Branch B](screenshots/Lab5b_branch.png)
+
+Implemented:
+
+* Branch Comparison
+* Branch Redirection
+
+---
+
+### Lab 6 - Complete Instruction Decode
+
+#### Part A
+
+![Decode A](screenshots/Lab6a_complete_instr_decode.png)
+
+#### Part B
+
+![Decode B](screenshots/Lab6b_complete_instr_decode.png)
+
+Implemented decoding for:
+
+* Arithmetic Instructions
+* Branch Instructions
+* Load Instructions
+* Store Instructions
+
+---
+
+### Lab 7 - Complete ALU
+
+#### Part A
+
+![ALU A](screenshots/Lab7a_complete_alu.png)
+
+#### Part B
+
+![ALU B](screenshots/Lab7b_complete_alu.png)
+
+Implemented:
+
+* ADD
+* ADDI
+* AND
+* OR
+* XOR
+* SLT
+* SLTU
+
+---
+
+### Lab 8 - Redirect Loads
+
+#### Part A
+
+![Redirect Loads A](screenshots/Lab8a_redirect_loads.png)
+
+#### Part B
+
+![Redirect Loads B](screenshots/Lab8b_redirect_loads.png)
+
+#### Part C
+
+![Redirect Loads C](screenshots/Lab8c_redirect_loads.png)
+
+Implemented:
+
+* Load Redirection
+* Pipeline Valid Control
+* Memory Read Flow
+
+---
+
+### Lab 9 - Load Data
+
+#### Part A
+
+![Load Data A](screenshots/Lab9a_load_data.png)
+
+#### Part B
+
+![Load Data B](screenshots/Lab9b_load_data.png)
+
+#### Part C
+
+![Load Data C](screenshots/Lab9c_load_data.png)
+
+Implemented:
+
+* Data Memory Read
+* Load Instruction Execution
+
+---
+
+### Lab 10 - Load Data Completion
+
+#### Part A
+
+![Load Data2 A](screenshots/Lab10a_load_data2.png)
+
+#### Part B
+
+![Load Data2 B](screenshots/Lab10b_load_data2.png)
+
+#### Part C
+
+![Load Data2 C](screenshots/Lab10c_load_data2.png)
+
+Implemented:
+
+* Load Writeback
+* Register File Update
+
+---
+
+### Lab 11 - Load / Store Program
+
+#### Part A
+
+![Load Store A](screenshots/Lab11a_load_store_program.png)
+
+#### Part B
+
+![Load Store B](screenshots/Lab11b_load_store_program.png)
+
+#### Part C
+
+![Load Store C](screenshots/Lab11c_load_store_program.png)
+
+Implemented:
+
+* Store Instruction
+* Load Instruction
+* Data Memory Verification
+
+---
+
+### Lab 12 - Jump Instructions (JAL / JALR)
+
+#### Part A
+
+![Jump A](screenshots/Lab12a_jump_instr.png)
+
+#### Part B
+
+![Jump B](screenshots/Lab12b_jump_instr.png)
+
+#### Part C
+
+![Jump C](screenshots/Lab12c_jump_instr.png)
+
+Implemented:
+
+* JAL
+* JALR
+* Jump Target Generation
+* Program Counter Redirection
+* Pipeline Flush Handling
+
+Simulation Status:
+
+```text
+PASSED
 
 ## Key Learnings
 
