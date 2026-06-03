@@ -23,7 +23,7 @@ The day introduced key concepts such as:
 
 ## Final Result
 
-Successfully implemented a Pipelined RV32I Processor capable of:
+Successfully implemented a functional 5-stage Pipelined RV32I Processor capable of executing arithmetic, logical, branch, load, store, and jump instructions with pipeline hazard handling and memory access support.
 
 * Arithmetic Operations
 * Branch Instructions
@@ -74,6 +74,88 @@ riscv-myth-workshop_devdutt/
 │
 └── README.md
 ```
+
+---
+
+## Learning Objectives
+
+This day focused on transforming a Single-Cycle CPU into a Pipelined RV32I Processor.
+
+Topics covered include:
+
+* Pipeline Validity
+* Pipeline Timing
+* Register File Bypass
+* Branch Redirection
+* Complete Instruction Decode
+* Complete ALU Implementation
+* Load and Store Instructions
+* Memory Interface
+* Jump Instructions
+* Pipeline Hazard Handling
+
+The goal was to understand how instructions execute simultaneously across multiple pipeline stages while maintaining correctness.
+
+---
+
+## Topics Covered
+
+### 1. Pipeline Validity
+
+Implemented instruction validity tracking across pipeline stages.
+
+### 2. Pipeline Timing
+
+Introduced cycle delays using TL-Verilog timing abstraction.
+
+### 3. Register File Bypass
+
+Implemented forwarding to eliminate data hazards.
+
+### 4. Branch Handling
+
+Implemented branch redirection and shadow invalidation.
+
+### 5. Complete Instruction Decode
+
+Implemented decode for:
+
+* Arithmetic Instructions
+* Logical Instructions
+* Load Instructions
+* Store Instructions
+* Branch Instructions
+* Jump Instructions
+
+### 6. Complete ALU
+
+Implemented:
+
+* ADD / ADDI
+* SUB
+* AND / ANDI
+* OR / ORI
+* XOR / XORI
+* SLL / SLLI
+* SRL / SRLI
+* SRA / SRAI
+* SLT / SLTI
+* SLTU / SLTIU
+
+### 7. Load and Store Operations
+
+Implemented memory access through Data Memory.
+
+### 8. Jump Instructions
+
+Implemented:
+
+* JAL
+* JALR
+
+### 9. Pipeline Verification
+
+Verified correct operation through simulation and waveform analysis.
 
 ---
 
@@ -395,6 +477,7 @@ Simulation Status:
 
 ```text
 PASSED
+```
 
 ## Key Learnings
 
@@ -410,3 +493,79 @@ PASSED
 * Complete Pipelined RV32I CPU Design
 
 Day 5 completed the development of a functional Pipelined RV32I Processor in TL-Verilog.
+
+
+## Files
+
+### Code
+
+All TL-Verilog source files used throughout Day 5 are located in:
+
+```text
+Day5/code/
+```
+
+This directory contains incremental implementations developed during each lab, including the final pipelined RV32I processor.
+
+---
+
+### Screenshots
+
+All simulation waveforms and lab verification screenshots are located in:
+
+```text
+Day5/screenshots/
+```
+
+These screenshots document the successful completion of each lab and verify processor functionality through Makerchip simulations.
+
+---
+
+### Notes
+
+Detailed technical notes covering the concepts learned during Day 5 are located in:
+
+```text
+Day5/notes.md
+```
+
+Topics include pipeline validity, pipeline timing, register bypassing, instruction decode, ALU operations, memory access, and jump instructions.
+
+---
+
+### Observations
+
+Debugging experiences, implementation challenges, and key takeaways from Day 5 are documented in:
+
+```text
+Day5/observations.md
+```
+
+This file records practical insights gained while building and verifying the pipelined RV32I processor.
+
+---
+
+### Final Processor
+
+The final integrated pipelined RV32I processor implementation is available in:
+
+```text
+Day5/code/risc_v_pipeline_final.tlv
+```
+
+This file contains the completed processor supporting:
+
+* Arithmetic Instructions
+* Logical Instructions
+* Branch Instructions
+* Load Instructions
+* Store Instructions
+* JAL
+* JALR
+* Register File Bypass
+* Pipeline Hazard Handling
+* Data Memory Interface
+
+## Conclusion
+
+Day 5 completed the transformation of a basic single-cycle processor into a functional pipelined RV32I CPU. Through the implementation of forwarding, branch handling, memory access, and jump instructions, a complete processor datapath was developed and verified using TL-Verilog and Makerchip simulations.
