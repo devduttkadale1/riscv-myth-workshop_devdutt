@@ -327,7 +327,7 @@ Topics:
 
 ### Introduction to Number Representation
 
-![Number Representation](screenshots/number_representation.png)
+![Number Representation](screenshots/number_sys_signed_representation.png)
 
 Topics:
 
@@ -339,126 +339,6 @@ Topics:
 
 ---
 
-### Signed and Unsigned Representation
-
-![Signed Numbers](screenshots/signed_unsigned_numbers.png)
-
-Topics:
-
-* MSB
-* Positive Numbers
-* Negative Numbers
-* RV64 Range
-
----
-
-### Two's Complement Representation
-
-![Twos Complement](screenshots/twos_complement.png)
-
-Topics:
-
-* Bit Inversion
-* Add One Method
-* Negative Number Encoding
-
----
-
-### Word, Byte and Doubleword Organization
-
-![Word Representation](screenshots/byte_word_doubleword.png)
-
-Topics:
-
-* MSB
-* LSB
-* Byte Addressing
-* Word Formation
-
----
-
-### Software to Hardware Abstraction
-
-![ISA Abstraction](screenshots/isa_abstraction.png)
-
-Topics:
-
-* ISA
-* Compiler
-* Assembler
-* Hardware Implementation
-
----
-
-### ABI and Stack Pointer
-
-![ABI](screenshots/abi_stack_pointer.png)
-
-Topics:
-
-* Function Calls
-* Register Usage
-* Stack Allocation
-
----
-
-### RV64I Instruction Set
-
-![RV64I](screenshots/rv64i_instruction_set.png)
-
-Topics:
-
-* Base Integer Instructions
-* Arithmetic Operations
-* Memory Operations
-
----
-
-### RV64M Extension
-
-![RV64M](screenshots/rv64m_extension.png)
-
-Topics:
-
-* Multiplication
-* Division
-
----
-
-### Floating Point Extensions
-
-![RV64F RV64D](screenshots/floating_point_extensions.png)
-
-Topics:
-
-* Single Precision Operations
-* Double Precision Operations
-
----
-
-### Pseudo Instructions
-
-![Pseudo Instructions](screenshots/pseudo_instructions.png)
-
-Topics:
-
-* mv
-* li
-* ret
-
----
-
-### Compiler and Assembler Flow
-
-![Compiler Flow](screenshots/compiler_assembler_flow.png)
-
-Topics:
-
-* C Program
-* Assembly Generation
-* Machine Code Generation
-
----
 
 ## Key Learning Outcomes
 
