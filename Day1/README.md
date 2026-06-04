@@ -111,6 +111,220 @@ Physical Hardware
 
 ## Screenshots
 
+### Introduction to RISC-V
+
+![Introduction](screenshots/Intro.png)
+
+Topics:
+
+* Introduction to RISC-V
+* Software and Hardware Interaction
+* ISA Fundamentals
+
+---
+
+### Software to Hardware Flow
+
+![Software to Hardware](screenshots/software_to_hardware.png)
+
+Topics:
+
+* Application Software
+* System Software
+* Compiler
+* Hardware Execution
+
+---
+
+### Instruction Set Architecture (ISA)
+
+![ISA](screenshots/isa.png)
+
+Topics:
+
+* ISA Abstraction
+* Software-Hardware Interface
+* Instruction Execution
+
+---
+
+### RTL Integration Flow
+
+![RTL Integration](screenshots/rtl_integration.png)
+
+Topics:
+
+* ISA
+* RTL Design
+* Physical Hardware
+* Silicon Implementation
+
+---
+
+### Base Integer Instruction Set (RV64I)
+
+![RV64I](screenshots/base_integer_instr.png)
+
+Topics:
+
+* Integer Arithmetic
+* Memory Operations
+* Base Instruction Set
+
+---
+
+### Multiply Extension (RV64M)
+
+![RV64M](screenshots/multiply_extension_instr.png)
+
+Topics:
+
+* Multiplication
+* Division
+
+---
+
+### Floating Point Extensions
+
+![Floating Point](screenshots/floating_point_instrn.png)
+
+Topics:
+
+* Single Precision Operations
+* Double Precision Operations
+
+---
+
+### Pseudo Instructions
+
+![Pseudo Instructions](screenshots/isa_pseudo_inst.png)
+
+Topics:
+
+* mv
+* li
+* ret
+
+---
+
+### Application Binary Interface (ABI)
+
+![ABI](screenshots/abi.png)
+
+Topics:
+
+* Register Usage
+* Function Calling Convention
+* Parameter Passing
+
+---
+
+### Stack Pointer
+
+![Stack Pointer](screenshots/stack_pointer.png)
+
+Topics:
+
+* Stack Allocation
+* Local Variables
+* Function Calls
+
+---
+
+### Unsigned Number Representation
+
+![Unsigned Numbers](screenshots/number_sys_unsigned_nos.png)
+
+Topics:
+
+* Binary Representation
+* Unsigned Numbers
+* Number Range
+
+---
+
+### Binary Pattern Identification
+
+![Unsigned Patterns](screenshots/number_sys_unsigned_nos_identification_pattern.png)
+
+Topics:
+
+* Binary Patterns
+* Number Representation
+* Bit Width Scaling
+
+---
+
+### Byte, Word and Doubleword Organization
+
+![Word Representation](screenshots/number_sys_unsigned_nos_identification.png)
+
+Topics:
+
+* Byte
+* Word
+* Doubleword
+* Bit Organization
+
+---
+
+### RV64 Unsigned Number Range
+
+![Unsigned Range](screenshots/number_sys_unsigned_nos_upper_lower_limit_of_rv64i.png)
+
+Topics:
+
+* Lower Limit
+* Upper Limit
+* RV64 Capacity
+
+---
+
+### Signed Number Representation
+
+![Signed Representation](screenshots/number_sys_signed_representation.png)
+
+Topics:
+
+* Signed Numbers
+* Two's Complement
+
+---
+
+### MSB Based Signed Number Identification
+
+![Signed MSB](screenshots/number_sys_signed_MSB_representation.png)
+
+Topics:
+
+* Sign Bit
+* Positive Numbers
+* Negative Numbers
+
+---
+
+### Signed Number Range
+
+![Signed Range](screenshots/number_sys_signed_representation_trick.png)
+
+Topics:
+
+* Positive Range
+* Negative Range
+* RV64 Signed Values
+
+---
+
+### Stopwatch Example
+
+![Stopwatch Example](screenshots/stopwatch_example.png)
+
+Topics:
+
+* Embedded Systems
+* Timing Applications
+* Hardware Abstraction
+
 ### Introduction to Number Representation
 
 ![Number Representation](screenshots/number_representation.png)
