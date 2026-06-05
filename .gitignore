@@ -1,0 +1,148 @@
+# ============================================================
+# .gitignore for riscv-myth-workshop_devdutt
+# RTL / VLSI Workshop Repository
+# ============================================================
+
+# -----------------------------------------------
+# OS-generated files
+# -----------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# -----------------------------------------------
+# Linux / Vim / Editor artifacts
+# -----------------------------------------------
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+*.bak
+*.orig
+
+# -----------------------------------------------
+# VS Code
+# -----------------------------------------------
+.vscode/
+*.code-workspace
+
+# -----------------------------------------------
+# JetBrains IDEs (CLion, IntelliJ)
+# -----------------------------------------------
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# -----------------------------------------------
+# Simulation tool outputs (Verilator, VCS, etc.)
+# -----------------------------------------------
+*.vcd
+*.fst
+*.lxt
+*.lxt2
+*.vzt
+*.vpd
+*.fsdb
+*.dump
+*.log
+simv
+simv.daidir/
+csrc/
+DVEfiles/
+ucli.key
+vc_hdrs.h
+
+# -----------------------------------------------
+# Vivado / Xilinx project artifacts
+# -----------------------------------------------
+*.jou
+*.str
+*.xpr
+*.xsa
+*.runs/
+*.ip_user_files/
+*.sim/
+*.cache/
+*.hw/
+*.sw/
+*.gen/
+*.srcs/
+.Xil/
+
+# -----------------------------------------------
+# Synopsys tool artifacts (DC, VCS, SpyGlass)
+# -----------------------------------------------
+*.pvl
+*.syn
+*.mr
+*.svf
+work/
+AN.DB/
+command.log
+filenames*.log
+
+# -----------------------------------------------
+# Cadence tool artifacts
+# -----------------------------------------------
+*.shm/
+cds.lib
+hdl.var
+INCA_libs/
+xcelium.d/
+
+# -----------------------------------------------
+# Python (if any scripts used)
+# -----------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.env
+.venv
+env/
+venv/
+
+# -----------------------------------------------
+# Compiled object files
+# -----------------------------------------------
+*.o
+*.a
+*.so
+*.elf
+*.hex
+*.bin
+*.out
+
+# -----------------------------------------------
+# Archive / compressed files (avoid accidental commits)
+# -----------------------------------------------
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# -----------------------------------------------
+# Temporary files
+# -----------------------------------------------
+tmp/
+temp/
+*.tmp
+*.temp
+
+# -----------------------------------------------
+# Makerchip / TL-Verilog tool cache
+# -----------------------------------------------
+*.tlv.m4
