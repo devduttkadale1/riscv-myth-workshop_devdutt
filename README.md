@@ -1,10 +1,26 @@
 # RISC-V MYTH Workshop
 
-A complete implementation journey through the RISC-V MYTH (Microprocessor for You in Thirty Hours) Workshop using TL-Verilog and Makerchip.
+A complete implementation of a Pipelined RV32I RISC-V Processor using TL-Verilog and Makerchip.
 
-This repository documents the development of digital logic components, a Single-Cycle RV32I Processor, and a complete Pipelined RV32I Processor, built incrementally through hands-on labs and verified using simulation waveforms.
+This repository documents the design, implementation, verification, and evolution of a RISC-V CPU from basic digital logic circuits to a fully functional pipelined processor.
 
----
+## Final Processor Capabilities
+
+- RV32I Base Integer ISA Support
+- Arithmetic Instructions
+- Logical Instructions
+- Shift Operations
+- Comparison Operations
+- Branch Instructions
+- Load/Store Operations
+- JAL and JALR
+- Register File Bypass
+- Pipeline Hazard Handling
+- Instruction Memory Interface
+- Data Memory Interface
+- Complete 5-Stage Pipeline
+
+Status: ✅ Successfully Implemented and Verified
 
 ## Project Overview
 
@@ -27,6 +43,37 @@ Pipelined RV32I Processor
 All source code, notes, observations, screenshots, and verification results are included.
 
 ---
+
+## Project Highlights
+
+Throughout the workshop I implemented:
+
+### Digital Design
+
+- Logic Gates
+- Multiplexers
+- Counters
+- Sequential Logic
+- Memory Elements
+
+### Processor Design
+
+- Program Counter
+- Instruction Fetch Unit
+- Instruction Decode Unit
+- Register File
+- Immediate Generator
+- ALU
+- Branch Logic
+- Load/Store Logic
+- Pipeline Control
+
+### Verification
+
+- Spike Simulation
+- Makerchip Waveform Analysis
+- Instruction Trace Verification
+- Register Value Verification
 
 ## Technologies Used
 
@@ -260,6 +307,14 @@ Throughout this workshop, practical experience was gained in:
 
 ---
 
+## Processor Evolution
+
+Day 1 → RISC-V ISA Fundamentals
+Day 2 → ABI and Verification
+Day 3 → Digital Logic Design
+Day 4 → Single-Cycle RV32I CPU
+Day 5 → Pipelined RV32I CPU
+
 ## Final Outcome
 
 A functional Pipelined RV32I Processor was successfully implemented and verified using TL-Verilog and Makerchip.
@@ -273,16 +328,15 @@ This repository serves as both:
 
 ## Author
 
-**Devdutt Kadale**
+Devdutt Kadale
 
-Broad Semiconductor
-National Institute of Technology Calicut (NIT Calicut)
+RTL Design Engineer (Broad Semiconductor)
+National Institute of Technology Calicut
 
-Areas of Interest:
+Interested in:
 
-* RTL Design
-* Digital Design
-* Computer Architecture
-* RISC-V
-* VLSI Front-End Design
-* Processor Microarchitecture
+- RTL Design
+- ASIC Design
+- Digital Design
+- Computer Architecture
+- RISC-V Processor Design
