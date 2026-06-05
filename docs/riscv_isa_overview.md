@@ -1,4 +1,4 @@
-Hi# RISC-V ISA Overview
+# RISC-V ISA Overview
 
 ## What is an ISA?
 

@@ -20,7 +20,7 @@
    $sum[31:0] = $val1 + $val2;   // Addition
    $diff[31:0] = $val1 - $val2;  // Substraction
    $prod[31:0] = $val1 * $val2;  // Multiplication
-   $quat[31:0] = $val2 == 0 ? 0 : ($val1 / $val2);  // Division
+   $quot[31:0] = $val2 == 0 ? 0 : ($val1 / $val2);  // Division
    
    $out[31:0] = $op == 2'b00 ? $sum :
                 $op == 2'b01 ? $diff :
