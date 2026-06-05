@@ -1,4 +1,5 @@
 # RISC-V MYTH Workshop
+> 📄 [About the Author & Workshop Context](./ABOUT.md)
 
 A complete implementation of a Pipelined RV32I RISC-V Processor using TL-Verilog and Makerchip.
 
