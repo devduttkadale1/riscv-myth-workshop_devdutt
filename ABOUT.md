@@ -2,11 +2,11 @@
 
 ## Who Am I?
 
-I am **Devdutt Kadale**, an RTL Design Engineer from Pune, Maharashtra, India.
+I am **Devdutt Kadale**, an RTL Design Engineer from Kolhapur, Maharashtra, India.
 
 I completed a 1-year internship at **Broad Semiconductor**, where I worked on RTL design of an **I3C Controller** featuring ENTDAA (Enter Dynamic Address Assignment), IBI (In-Band Interrupt), and dynamic addressing. I also worked on GPIO multiplexing and UART/I2C/SPI protocol integration.
 
-I am currently working at **LeadSOC** as an RTL Design Engineer, deepening my expertise in digital design, CDC (Clock Domain Crossing) verification, lint analysis, and synthesis flows using industry tools like Synopsys VCS, Design Compiler, SpyGlass, and PrimeTime.
+I am currently working at **BROAD SEMICONDUCTOR** as an RTL Design Engineer, deepening my expertise in digital design, CDC (Clock Domain Crossing) verification, lint analysis, and synthesis flows using industry tools like Synopsys VCS, Design Compiler, SpyGlass, and PrimeTime.
 
 My core technical skills include:
 
