@@ -331,7 +331,7 @@ This repository serves as both:
 Devdutt Kadale
 
 RTL Design Engineer (Broad Semiconductor)  
-National Institute of Technology Calicut
+M.Tech National Institute of Technology Calicut
 
 Interested in:
 
