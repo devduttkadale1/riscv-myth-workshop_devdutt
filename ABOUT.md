@@ -100,8 +100,8 @@ This workshop was a significant step in bridging my protocol-level RTL experienc
 ## Repository Contact
 
 - **LinkedIn:** [linkedin.com/in/devdutt-kadale](https://www.linkedin.com/in/devdutt-kadale)
-- **Location:** Pune, Maharashtra, India
-- **Current Role:** RTL Design Engineer — LeadSOC
+- **Location:** Maharashtra, India
+- **Current Role:** RTL Design Engineer — Broad Semiconductor
 
 ***
 
