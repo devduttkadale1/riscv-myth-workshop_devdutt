@@ -121,20 +121,21 @@ Caller Function
 Topics:
 
 * ABI Fundamentals
+* User ISA
+* System ISA
 * Software-Hardware Interface
-* System Call Interface
 
 ---
 
-### ABI Interface
+### ABI Interface Layer
 
 ![ABI Interface](screenshots/abi_interface.png)
 
 Topics:
 
-* User ISA
-* System ISA
+* Application Program
 * Operating System
+* ABI Layer
 * Hardware Abstraction
 
 ---
@@ -145,10 +146,9 @@ Topics:
 
 Topics:
 
-* ABI Layer
-* ISA Layer
-* RTL Layer
-* Hardware Implementation
+* ABI Concepts
+* User Interface
+* Hardware Interface
 
 ---
 
@@ -167,27 +167,25 @@ Topics:
 
 ### Register Structure
 
-![Register Structure](screenshots/abi_structure.png)
+![ABI Structure](screenshots/abi_structure.png)
 
 Topics:
 
 * XLEN
-* RV32
-* RV64
+* RV32 vs RV64
 * Register Organization
 
 ---
 
 ### Register Structure and Memory
 
-![Register Memory Structure](screenshots/abi_register_structure_memory.png)
+![Register Structure Memory](screenshots/abi_register_structure_memory.png)
 
 Topics:
 
-* Memory Organization
-* Registers
-* Load Operations
-* Store Operations
+* Register Mapping
+* Memory Access
+* Load and Store Operations
 
 ---
 
@@ -210,7 +208,7 @@ Topics:
 Topics:
 
 * Memory Access
-* Addressing
+* Address Calculation
 * Instruction Fields
 
 ---
@@ -234,7 +232,7 @@ Topics:
 
 Topics:
 
-* R-Type Instructions
+* R-Type Format
 * Source Registers
 * Destination Register
 
@@ -246,8 +244,8 @@ Topics:
 
 Topics:
 
-* Register Operations
-* Instruction Encoding
+* Arithmetic Operations
+* Register-Based Instructions
 
 ---
 
@@ -259,7 +257,7 @@ Topics:
 
 * Store Doubleword
 * Memory Write Operations
-* Offset Addressing
+* Address Offsets
 
 ---
 
@@ -275,8 +273,91 @@ Topics:
 
 ---
 
-## Lab Screenshots
+## Lab - Function Call Verification
 
+### Problem Statement
+
+![Problem Statement](screenshots/lab1_problem.png)
+
+Topics:
+
+* Rewrite C Program in Assembly
+* Function Call Flow
+
+---
+
+### Algorithm Flow
+
+![Algorithm Flow](screenshots/lab1a_problem_algorithm.png)
+
+Topics:
+
+* Program Flow
+* Register Usage
+* Iterative Addition
+
+---
+
+### C Program
+
+![C Program](screenshots/lab1c_1to9_custom.c_code.png)
+
+Topics:
+
+* Function Declaration
+* Function Call
+* Result Display
+
+---
+
+### Assembly Program
+
+![Assembly Program](screenshots/lab1d_load.s_code.png)
+
+Topics:
+
+* Register Initialization
+* Loop Construction
+* Branch Instructions
+
+---
+
+### Function Call Simulation
+
+![Function Call Simulation](screenshots/lab1e_simulate_function_call.png)
+
+Topics:
+
+* ABI Function Calling Convention
+* Argument Passing
+* Return Value Handling
+
+---
+
+### Simulation Result
+
+![Simulation Result](screenshots/lab1f_simulate_function_call_results.png)
+
+Topics:
+
+* Spike Execution
+* Program Output
+* Verification
+
+---
+
+### Final Verification
+
+![Final Verification](screenshots/lab1g_simulation_results.png)
+
+Topics:
+
+* GCC Compilation
+* Objdump Analysis
+* Spike Simulation
+* Instruction Verification
+
+---
 ### Problem Statement
 
 ![Lab Problem](screenshots/lab1_problem.png)
